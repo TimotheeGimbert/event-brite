@@ -13,6 +13,7 @@ tim = User.create(
   encrypted_password: 'blabla',
   description: "Description de l'utilisateur Tim"
 )
+puts tim.first_name
 puts tim
 
 nono = User.create(
@@ -22,4 +23,5 @@ nono = User.create(
   encrypted_password: 'blublu',
   description: "Description de l'utilisateur Nono"
 )
+puts nono.first_name
 puts nono
