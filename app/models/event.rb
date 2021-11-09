@@ -5,22 +5,22 @@ class Event < ApplicationRecord
 
   validates :title,
     presence: true,
-    lenght: { minimum: 5, maximum: 140 }
+    length: { minimum: 5, maximum: 140 }
 
   validates :start_date, 
-    presence: true, 
-    :start_date_cannot_be_in_the_past
+    presence: true
+  validate :start_date_cannot_be_in_the_past
 
   def start_date_cannot_be_in_the_past
-    if start_date <= Datetime.now
+    if start_date <= Date.current
       errors.add(:start_date, "La date de début de l'évênement doit se situer dans le futur !")
     end
   end
 
   validates :duration, 
     presence: true, 
-    numericality: { only_integer: true, greater_than: 0 }, 
-    :duration_should_be_multiple_of_5
+    numericality: { only_integer: true, greater_than: 0 }
+  validate :duration_should_be_multiple_of_5
 
   def duration_should_be_multiple_of_5
     if duration % 5 != 0
@@ -34,7 +34,7 @@ class Event < ApplicationRecord
 
   validates :description,
     presence: true,
-    lenght: { minimum: 5, maximum: 140 }
+    length: { minimum: 5, maximum: 140 }
 
   validates :location,
     presence: true
