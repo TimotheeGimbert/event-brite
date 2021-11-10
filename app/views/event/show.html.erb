@@ -10,6 +10,7 @@
           <h6 class="card-subtitle mb-2 text-muted"> Organisateur: <%=  @event.administrator.first_name %> </h6>
           <p class="card-text"> <%=  @event.description %> </p>
           <h6 class="card-subtitle mb-2 text-muted"> <%=  @event.price %> €  </h6>
+          <%= link_to "S'inscrire", new_attendance_path, class: "btn btn-outline-light my-5 w-100" %>
         </div>
       </div>
     </div>
