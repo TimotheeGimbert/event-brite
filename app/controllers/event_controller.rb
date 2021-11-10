@@ -8,4 +8,8 @@ class EventController < ApplicationController
 
   end
   
+  def show
+    @event = Event.find_by(id: params[:id])
+  end
+
 end

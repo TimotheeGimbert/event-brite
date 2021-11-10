@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card text-center mx-auto my-5" style="width: 24rem;">
+        <div class="card-body">
+          <h5 class="card-title"> <%= @event.title %> </h5>
+          <h6 class="card-subtitle mb-2 text-success"> <%=  @event.start_date.strftime('%Y %m %d %H:%M') %> </h6>
+          <h6 class="card-subtitle mb-2 text-muted"> <%=  @event.location %> </h6>
+          <h6 class="card-subtitle mb-2 text-muted"> <%=  @event.duration %> minutes </h6>
+          <h6 class="card-subtitle mb-2 text-muted"> Organisateur: <%=  @event.administrator.first_name %> </h6>
+          <p class="card-text"> <%=  @event.description %> </p>
+          <h6 class="card-subtitle mb-2 text-muted"> <%=  @event.price %> €  </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

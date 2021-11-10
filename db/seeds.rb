@@ -10,8 +10,6 @@ Attendance.destroy_all
 Event.destroy_all
 User.destroy_all
 
-
-
 timo = User.create(
   first_name:'Timo',
   last_name: 'Gim',
@@ -47,4 +45,14 @@ flight = Attendance.create(
   event: bdx_liege,
   user_id: timo.id,
   stripe_customer_id: "###########"
+)
+
+liege_bdx = Event.create(
+  administrator: nono,
+  title: 'After love',
+  start_date: DateTime.new(2021,11,22,19,00,0),
+  duration: 130,
+  location: 'Bruxelles',
+  price: 110,
+  description: 'Whish the best to the poenix'
 )
