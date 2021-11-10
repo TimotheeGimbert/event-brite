@@ -4,6 +4,4 @@ class UserController < ApplicationController
 
   end
 
-  after_create: 
-
 end
