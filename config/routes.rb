@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  root 'event#index'
+  devise_for :users
+
   get 'static_pages/index'
   get 'static_pages/secret'
-  devise_for :users
-  root 'events#index'
   get 'user/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
