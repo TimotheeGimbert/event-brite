@@ -14,7 +14,7 @@ timo = User.create(
   first_name:'Timo',
   last_name: 'Gim',
   email: 'tim33270@yopmail.com',
-  encrypted_password: 'blabla',
+  password: 'blabla',
   description: "Description de l'utilisateur Tim"
 )
 puts timo.first_name
@@ -23,8 +23,8 @@ puts timo
 nono = User.create(
   first_name:'Nono',
   last_name: 'Ma',
-  email: 'tim33270@yopmail.com',
-  encrypted_password: 'blublu',
+  email: 'tim33271@yopmail.com',
+  password: 'blublu',
   description: "Description de l'utilisateur Nono"
 )
 puts nono.first_name
@@ -42,5 +42,7 @@ bdx_liege = Event.create(
 puts bdx_liege
 
 flight = Attendance.create(
-  user_id: timo.id
+  event: bdx_liege,
+  user_id: timo.id,
+  stripe_customer_id: "###########"
 )
