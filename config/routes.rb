@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'event#index'
+  root to: 'event#index'
   devise_for :users
 
   get 'static_pages/index'
