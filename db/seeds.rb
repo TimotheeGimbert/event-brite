@@ -10,14 +10,14 @@ Attendance.destroy_all
 Event.destroy_all
 User.destroy_all
 
-cities = ['Bordeaux', 'Nantes', 'Bruxelles', 'Paris', 'Lyon', 'Marseille', 'Toulouse']
+cities = ['Bordeaux', 'Rennes', 'Bruxelles', 'Paris', 'Pornic', 'Liège', 'Toulouse']
 
 timo = User.create(
   first_name:'Timo',
   last_name: 'Gim',
   email: 'tim33270@yopmail.com',
   password: 'blabla',
-  description: "Description de l'utilisateur Tim"
+  description: "Timo est le CTO de FuseNow"
 )
 
 nono = User.create(
@@ -25,51 +25,47 @@ nono = User.create(
   last_name: 'Ma',
   email: 'tim33271@yopmail.com',
   password: 'blublu',
-  description: "Description de l'utilisateur Nono"
+  description: "Nono est la responsable communication du pôle évènementiel de FuseNow"
 )
 
 bdx_liege = Event.create(
   administrator: timo,
-  title: 'Auprès de ma rose',
+  title: 'Flight to LIEGE !!!',
   start_date: DateTime.new(2021,11,15,22,55,0),
-  duration: 90,
-  location: 'Liege',
-  price: 120,
-  description: "Pour l'amour d'une rose, le jardinier nous raconte qu'il faut savoir aimer également les épines..."
-)
-Attendance.create(
-  event: bdx_liege,
-  user_id: timo.id,
-  stripe_customer_id: "###########"
-)
-Attendance.create(
-  event: bdx_liege,
-  user_id: nono.id,
-  stripe_customer_id: "###########"
-)
-
-liege_bdx = Event.create(
-  administrator: nono,
-  title: 'Auprès de mon arbre',
-  start_date: DateTime.new(2021,11,22,19,00,0),
-  duration: 130,
+  duration: 120,
   location: 'Bordeaux',
   price: 110,
-  description: "Pour l'amour d'un arbre, la jardinière nous raconte qu'elle a longtemps attendu pour sentir la douce odeur du bois sous l'écorce..."
-)
-
-Attendance.create(
-  event: liege_bdx,
-  user_id: nono.id,
-  stripe_customer_id: "###########"
+  description: "On part à Liège passer une semaine d'échange énergétique intense avec la responsable communicaiton!"
 )
 Attendance.create(
-  event: liege_bdx,
+  event: bdx_liege,
   user_id: timo.id,
   stripe_customer_id: "###########"
 )
 
-33.times do 
+mandingue = Event.create(
+  administrator: nono,
+  title: 'Mandingue de toi',
+  start_date: DateTime.new(2021,11,22,19,00,0),
+  duration: 130,
+  location: 'Liège',
+  price: 11,
+  description: "La danse africaine est pleine de tonus et de joie de vivre!"
+)
+puts mandingue.title
+
+Attendance.create(
+  event: mandingue,
+  user_id: nono.id,
+  stripe_customer_id: "###########"
+)
+Attendance.create(
+  event: mandingue,
+  user_id: timo.id,
+  stripe_customer_id: "###########"
+)
+
+22.times do 
   faker_name = Faker::Name.first_name
   faker_user = User.create(
     first_name: faker_name,
@@ -81,10 +77,10 @@ Attendance.create(
   puts faker_user
 end
 
-11.times do
+22.times do
   faker_event = Event.create(
   administrator: User.all[rand(0..User.all.length)],
-  title: Faker::Lorem.sentence,
+  title: Faker::Lorem.sentence(word_count: 3, supplemental: true),
   start_date: Faker::Date.forward(days: rand(3..99)),
   duration: 5 * rand(1..35),
   location: cities[rand(0..cities.length)],
@@ -92,4 +88,13 @@ end
   description: Faker::Lorem.paragraph(sentence_count: 2)
   )
   puts faker_event
+end
+
+44.times do 
+  attendance = Attendance.create(
+  event: Event.all[rand(0..Event.all.length-1)],
+  user_id: User.all.reject{|u| u.first_name == 'Timo' || u.first_name == 'Nono'}[rand(0..User.all.length-3)].id,
+  stripe_customer_id: "###########"
+  )
+  puts attendance
 end
