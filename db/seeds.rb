@@ -29,7 +29,7 @@ nono = User.create(
 )
 
 bdx_liege = Event.create(
-  administrator: nono,
+  administrator: timo,
   title: 'Auprès de ma rose',
   start_date: DateTime.new(2021,11,15,22,55,0),
   duration: 90,
@@ -49,7 +49,7 @@ Attendance.create(
 )
 
 liege_bdx = Event.create(
-  administrator: timo,
+  administrator: nono,
   title: 'Auprès de mon arbre',
   start_date: DateTime.new(2021,11,22,19,00,0),
   duration: 130,
