@@ -1,5 +1,18 @@
 <div class="container">
   <div class="row">
+    <div class="p-5 text-center bg-image rounded-3" style="background-image: url('assets/crowd.jpg'); height: 600px;">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h4 class="my-5">Partagez l'énergie qui vous entoure</h4>
+            <a class="btn btn-outline-light btn-lg mb-5" href="#!" role="button">Créer un évênement</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div> 
+  </div>
+  <div class="row">
     <% Event.all.each do |e| %>
       <div class="col">
         <div class="card shadow-lg bg-dark text-light mx-auto my-5" style="width: 18rem;">
