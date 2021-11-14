@@ -19,7 +19,7 @@
             <% end %>
           <% end %>
           <% unless user_participates %>
-            <%= link_to "S'inscrire", new_attendance_path, class: "btn btn-outline-light my-5 w-100" %>
+            <%= link_to "S'inscrire", new_attendance_path(event_id: @event.id), class: "btn btn-outline-light my-5 w-100" %>
           <% end %> 
         </div>
       </div>
