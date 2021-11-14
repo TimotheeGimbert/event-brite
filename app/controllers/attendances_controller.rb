@@ -14,7 +14,7 @@ class AttendancesController < ApplicationController
     if @attendance.save 
       redirect_to root_path
     else
-      flash.now[:danger] = 'Invalid gossip parameters !'
+      flash.now[:danger] = 'Invalid attendance parameters !'
       render 'new'
     end
   end

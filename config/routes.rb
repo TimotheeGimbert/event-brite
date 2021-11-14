@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'event#index'
+  root to: 'events#index'
   devise_for :users
 
   resources :static_pages
-  resources :event
+  resources :events
   resources :attendances
-  resources :user, only: [:show]
+  resources :users, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
