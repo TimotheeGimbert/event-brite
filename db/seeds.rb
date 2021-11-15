@@ -17,7 +17,7 @@ timo = User.create(
   last_name: 'Gim',
   email: 'tim33270@yopmail.com',
   password: 'blabla',
-  description: "Timo est le CTO de FuseNow"
+  description: "Timo est le CTO de FuseNow."
 )
 
 nono = User.create(
@@ -25,7 +25,7 @@ nono = User.create(
   last_name: 'Ma',
   email: 'tim33271@yopmail.com',
   password: 'blublu',
-  description: "Nono est la responsable communication du pôle évènementiel de FuseNow"
+  description: "Nono est la responsable communication du pôle évènementiel de FuseNow."
 )
 
 bdx_liege = Event.create(
@@ -35,7 +35,7 @@ bdx_liege = Event.create(
   duration: 120,
   location: 'Bordeaux',
   price: 110,
-  description: "On part à Liège passer une semaine d'échange énergétique intense avec la responsable communicaiton!"
+  description: "On part à Liège passer une semaine intense avec Nono la responsable communication !"
 )
 Attendance.create(
   event: bdx_liege,
