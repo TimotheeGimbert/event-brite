@@ -1,1 +1,1 @@
-[Découvrir Openote en ligne](https://fuzenow.herokuapp.com/)
+[Découvrir FuzeNow en ligne](https://fuzenow.herokuapp.com/)
