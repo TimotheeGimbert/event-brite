@@ -1,5 +1,5 @@
-<div class="list-group-item text-center w-75 mx-auto mt-5">
-  <h2 class="mb-5">Création d'un évênement</h2>
+<div class="list-group-item w-75 mx-auto text-center mt-5">
+  <h2 class="my-5">Création d'un évênement</h2>
   <%= form_tag url_for(action: 'create'), method: "post" do %>
     <div class="event-creation__title"> 
       <%= label_tag 'Titre' %>
@@ -25,7 +25,7 @@
       <%= label_tag 'Description' %>
       <%= text_area_tag 'description', @event.description %>
     </div>
-    <div class="event-creation__submit-button">
+    <div class="my-5 event-creation__submit-button">
       <%= submit_tag "Créer l'évênement" %>
     </div>
   <% end %>
